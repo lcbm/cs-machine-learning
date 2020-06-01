@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  tensorflow-notebook:
+    image: jupyter/tensorflow-notebook
+    hostname: tensorflow_notebook
+    container_name: tensorflow_notebook
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/home/jovyan/work
+    command: "start-notebook.sh \
+      --NotebookApp.token=''"
+
+volumes:
+  tensorflow-notebook: ~
